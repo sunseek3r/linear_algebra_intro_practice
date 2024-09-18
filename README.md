@@ -5,7 +5,7 @@ The repository contains practical homework from the course "Incorrect Data Proce
 ## Practices
 
 1. Vectors;
-2. Matrices (In progress);
+2. Matrices;
 3. Linear and affine mappings (In progress);
 4. Matrix decompositions (In progress);
 5. Regularization (In progress).
