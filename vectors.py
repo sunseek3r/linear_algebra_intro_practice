@@ -16,7 +16,7 @@ def get_vector(dim: int) -> np.ndarray:
     raise NotImplementedError
 
 
-def get_sparce_vector(dim: int) -> sparse.coo_matrix:
+def get_sparse_vector(dim: int) -> sparse.coo_matrix:
     """Create random sparse column vector with dimension dim.
 
     Args:
