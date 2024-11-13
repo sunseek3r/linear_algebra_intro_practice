@@ -19,7 +19,12 @@ def preprocess(X: np.ndarray, y: np.ndarray) -> list[np.ndarray]:
     Returns:
         list[np.ndarray]: List containing training and test sets for features and target.
     """
-    raise NotImplementedError
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+
+    X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2)
+
+    return [X_train, X_test, y_train, y_test]
 
 
 def get_regression_data() -> list[np.ndarray]:
@@ -29,7 +34,9 @@ def get_regression_data() -> list[np.ndarray]:
     Returns:
         list[np.ndarray]: List containing training and test sets for features and target.
     """
-    raise NotImplementedError
+    data = load_diabetes()
+    X, y = data.data, data.target
+    return preprocess(X, y)
 
 
 def get_classification_data() -> list[np.ndarray]:
@@ -39,7 +46,9 @@ def get_classification_data() -> list[np.ndarray]:
     Returns:
         list[np.ndarray]: List containing training and test sets for features and target.
     """
-    raise NotImplementedError
+    data = load_breast_cancer()
+    X, y = data.data, data.target
+    return preprocess(X, y)
 
 
 def linear_regression(X: np.ndarray, y: np.ndarray) -> BaseEstimator:
